@@ -8,7 +8,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "relation-graph": "2.1.2"
+    "relation-graph": "2.1.6"
   },
   "devDependencies": {
     "@types/node": "^16.18.12",
