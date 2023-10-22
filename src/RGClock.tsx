@@ -6,7 +6,7 @@ const NodeSlot: React.FC<RGNodeSlotProps> = ({node}) => {
   if (node.id === 'current') {
     return <div style={{lineHeight:'24px', width: '100%', height: '100%', color: '#000000', borderRadius:'50%', boxSizing: 'border-box', background: 'linear-gradient(to right, #00FFFF, #FF00FF)'}}>{node.text}</div>
   }
-  return <div style={{lineHeight:'38px', width: '100%', height: '100%', border: '#999999 solid 1px', color: '#000000', borderRadius:'50%', boxSizing: 'border-box'}}>{node.text}</div>
+  return <div style={{lineHeight:'38px', width: '100%', height: '100%', textAlign: 'center',border: '#999999 solid 1px', color: '#000000', borderRadius:'50%', boxSizing: 'border-box'}}>{node.text}</div>
 }
 const RGClock: React.FC = () => {
   const seeksRelationGraph$ = useRef() as MutableRefObject<RelationGraphExpose>;
