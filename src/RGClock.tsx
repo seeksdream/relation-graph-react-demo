@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import RelationGraph from 'relation-graph/react';
+import RelationGraph, {RGNode, RGUserEvent} from 'relation-graph/react';
 import type { MutableRefObject} from 'react';
 import type { RelationGraphExpose, RGJsonData, RGNodeSlotProps, RGOptions, RGLink } from 'relation-graph/react';
 const NodeSlot: React.FC<RGNodeSlotProps> = ({node}) => {
@@ -58,10 +58,14 @@ const RGClock: React.FC = () => {
     defaultNodeColor: 'transparent',
     defaultLineColor: 'rgba(227,226,226,0.3)'
   }
+  const onNodeClick = (node:RGNode, e:MouseEvent|TouchEvent) => {
+    console.log('onNodeClick', node.id, node.text);
+    return false; // Both true and false are acceptable. No impact.
+  }
   return <div>
     <div>ok</div>
     <div style={{ height: 600, width: 900, border: '#efefef solid 1px' }}>
-      <RelationGraph ref={seeksRelationGraph$} options={options} nodeSlot={NodeSlot} />
+      <RelationGraph ref={seeksRelationGraph$} options={options} onNodeClick={(node:RGNode, e:RGUserEvent) => onNodeClick(node, e)} nodeSlot={NodeSlot} />
     </div>
   </div>
 };
