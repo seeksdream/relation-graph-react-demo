@@ -35,7 +35,7 @@ const RGClock: React.FC = () => {
     focusNode.y = targetNode.y;
     const gInstance = seeksRelationGraph$.current.getInstance();
     gInstance.options.checkedNodeId = 'current'
-    gInstance.options.checkedLineId = gInstance.getLinks().find((l:RGLink) => l.toNode.id === targetNode.id).seeks_id
+    gInstance.options.checkedLineId = gInstance.getLinks().find((l:RGLink) => l.toNode.id === targetNode.id).relations[0].id
     console.log(gInstance.options.checkedLineId);
     seeksRelationGraph$.current.updateView()
     setTimeout(()=>{play(targetNodeNumber + 1)}, 1000)
