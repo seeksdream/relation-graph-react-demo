@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import RGClock from './RGClock';
+import SimpleGraph from './SimpleGraph';
 ReactDOM.render(
   <Router>
-    <RGClock />
+    <SimpleGraph />
   </Router>,
   document.querySelector('#root')
 );
